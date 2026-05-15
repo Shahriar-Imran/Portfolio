@@ -302,7 +302,46 @@ img {
     border-radius: 2px;
 }
 
-/* Online Contest Section */
+/* Competitive Programming hierarchy */
+.cp-section > .container > .section-title {
+    margin-bottom: 2.5rem;
+}
+
+.cp-subsection {
+    margin-bottom: 3rem;
+}
+
+.cp-subsection:last-child {
+    margin-bottom: 0;
+}
+
+.subsection-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 4px solid #4a90e2;
+}
+
+.subsubsection-title {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.cp-subsection-group {
+    margin-bottom: 2.5rem;
+}
+
+.cp-subsection-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Contest cards */
 .contest-card {
     background: white;
     border-radius: 20px;
@@ -311,14 +350,28 @@ img {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     gap: 2rem;
-    align-items: start;
+    align-items: stretch;
     transition: transform 0.3s ease;
     margin-bottom: 2rem;
     min-width: 0;
 }
 
-.section .contest-card:last-child {
+.cp-subsection-group .contest-card:last-child,
+.cp-subsection > .contest-card:last-child {
     margin-bottom: 0;
+}
+
+@media (min-width: 769px) {
+    .contest-card .contest-image {
+        height: 100%;
+        min-height: 220px;
+        align-self: stretch;
+    }
+
+    .contest-card .contest-image img {
+        height: 100%;
+        min-height: 220px;
+    }
 }
 
 .contest-card:hover {
@@ -1006,6 +1059,24 @@ img {
         font-size: 2rem;
     }
 
+    .subsection-title {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .subsubsection-title {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .cp-subsection {
+        margin-bottom: 2.5rem;
+    }
+
+    .cp-subsection-group {
+        margin-bottom: 2rem;
+    }
+
     .footer-grid {
         flex-direction: column;
         gap: 1.75rem;
@@ -1085,6 +1156,17 @@ img {
         font-size: 1.6rem;
         margin-bottom: 1.75rem;
         padding: 0 4px;
+    }
+
+    .subsection-title {
+        font-size: 1.35rem;
+        padding-left: 0.75rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .subsubsection-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
     }
 
     .contest-card,

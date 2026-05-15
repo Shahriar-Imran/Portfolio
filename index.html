@@ -17,10 +17,7 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#online-contest" class="nav-link">Online Contest</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#onsite-contest" class="nav-link">Onsite Contest</a>
+                    <a href="#competitive-programming" class="nav-link">Competitive Programming</a>
                 </li>
                 <li class="nav-item">
                     <a href="#extra-curricular" class="nav-link">Extra Curricular</a>
@@ -33,6 +30,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
                 </li>
                 <li class="nav-item nav-item-cv">
                     <a href="Imran_Resume.pdf" class="btn btn-cv" download="Imran_Resume.pdf">
@@ -80,10 +80,13 @@
         </div>
     </section>
 
-    <!-- Online Contest Section -->
-    <section id="online-contest" class="section">
+    <!-- Competitive Programming -->
+    <section id="competitive-programming" class="section cp-section">
         <div class="container">
-            <h2 class="section-title">Online Contest</h2>
+            <h2 class="section-title">Competitive Programming</h2>
+
+            <div id="online-contest" class="cp-subsection">
+            <h3 class="subsection-title">Online Contest</h3>
             <div class="contest-card">
                 <div class="contest-image">
                     <img src="codeforces logo.webp" alt="Codeforces Profile">
@@ -110,15 +113,15 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+            </div>
 
-    <!-- Onsite Contest Section -->
-    <section id="onsite-contest" class="section">
-        <div class="container">
-            <h2 class="section-title">Onsite Contest</h2>
+            <div id="onsite-contest" class="cp-subsection">
+            <h3 class="subsection-title">Onsite Contest</h3>
 
-            <!-- ICPC 2025 Contest -->
+            <div class="cp-subsection-group" id="icpc-contests">
+            <h4 class="subsubsection-title">ICPC</h4>
+
+            <!-- ICPC Dhaka Regional 2025 -->
             <div class="contest-card">
                 <div class="contest-image">
                     <img src="ICPC 2025.jpeg" alt="IUBAT Eksho Eksho">
@@ -148,11 +151,45 @@
                     </a>
                 </div>
             </div>
-            
-            <!-- ICPC 2025 Contest -->
+
+            <!-- ICPC Dhaka Regional 2024 -->
             <div class="contest-card">
                 <div class="contest-image">
-                    <img src="BUET_IUPC.jpeg" alt="ICPC Team">
+                    <img src="ICPC 2024.jpg" alt="ICPC Team">
+                </div>
+                <div class="contest-content">
+                    <h3>ICPC Dhaka Regional 2024</h3>
+                    <p>International Collegiate Programming Contest - The most prestigious competitive programming contest for university students worldwide.</p>
+                    <div class="contest-stats">
+                        <div class="stat">
+                            <span class="stat-label">Rank</span>
+                            <span class="stat-value">93</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Team</span>
+                            <span class="stat-value">IUBAT_Iterators</span>
+                        </div>
+                    </div>
+                    <div class="contest-details">
+                        <p><strong>Location:</strong> Daffodil International University, Dhaka</p>
+                        <p><strong>Date:</strong>December 07, 2024</p>
+                        <p><strong>Problems Solved:</strong> 3/12</p>
+                        <p><strong>Team Members:</strong> Shahriar Chowdhury Imran, Md Foyzur Rahman, Md Shojibur Rahman Fahad</p>
+                    </div>
+                    <a href="https://icpc.global/regionals/finder/Dhaka-2025/standings" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Results
+                    </a>
+                </div>
+            </div>
+            </div>
+
+            <div class="cp-subsection-group" id="iupc-contests">
+            <h4 class="subsubsection-title">IUPC &amp; Other Contests</h4>
+
+            <!-- BUET IUPC 2026 -->
+            <div class="contest-card">
+                <div class="contest-image">
+                    <img src="BUET_IUPC.jpeg" alt="BUET IUPC">
                 </div>
                 <div class="contest-content">
                     <h3>BUET IUPC 2026</h3>
@@ -397,37 +434,6 @@
                 </div>
             </div>
             
-            <!-- ICPC 2024 Contest -->
-            <div class="contest-card">
-                <div class="contest-image">
-                    <img src="ICPC 2024.jpg" alt="ICPC Team">
-                </div>
-                <div class="contest-content">
-                    <h3>ICPC Dhaka Regional 2024</h3>
-                    <p>International Collegiate Programming Contest - The most prestigious competitive programming contest for university students worldwide.</p>
-                    <div class="contest-stats">
-                        <div class="stat">
-                            <span class="stat-label">Rank</span>
-                            <span class="stat-value">93</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-label">Team</span>
-                            <span class="stat-value">IUBAT_Iterators</span>
-                        </div>
-                        
-                    </div>
-                    <div class="contest-details">
-                        <p><strong>Location:</strong> Daffodil International University, Dhaka</p>
-                        <p><strong>Date:</strong>December 07, 2024</p>
-                        <p><strong>Problems Solved:</strong> 3/12</p>
-                        <p><strong>Team Members:</strong> Shahriar Chowdhury Imran, Md Foyzur Rahman, Md Shojibur Rahman Fahad</p>
-                    </div>
-                    <a href="https://icpc.global/regionals/finder/Dhaka-2025/standings" class="btn btn-primary" target="_blank">
-                        <i class="fas fa-external-link-alt"></i> View Results
-                    </a>
-                </div>
-            </div>
-
             <!-- NCPC Contest -->
             <div class="contest-card">
                 <div class="contest-image">
@@ -548,6 +554,8 @@
                         <i class="fas fa-external-link-alt"></i> View Results
                     </a>
                 </div>
+            </div>
+            </div>
             </div>
         </div>
     </section>
