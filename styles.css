@@ -7,6 +7,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -14,6 +15,12 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f8fafc;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .container {
@@ -155,11 +162,12 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 2.8rem;
+    font-size: clamp(1.75rem, 4vw, 2.8rem);
     font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInUp 1s ease;
-    white-space: nowrap;
+    line-height: 1.2;
+    word-wrap: break-word;
 }
 
 .hero-text h2 {
@@ -350,7 +358,7 @@ body {
 /* Onsite Contest Section */
 .contest-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
 }
 
@@ -540,7 +548,7 @@ body {
 /* Awards Section */
 .awards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
 }
 
@@ -600,7 +608,7 @@ body {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
 }
 
@@ -676,9 +684,129 @@ body {
 /* Footer */
 .footer {
     background: #2d3748;
+    color: #e2e8f0;
+    padding: 3rem 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1.5fr auto;
+    gap: 2.5rem;
+    align-items: start;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand h3 {
     color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    line-height: 1.5;
+}
+
+.footer-contact h4,
+.footer-social h4 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.footer-contact-list li i {
+    color: #4a90e2;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+    width: 1rem;
     text-align: center;
-    padding: 2rem 0;
+}
+
+.footer-contact-list a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-break: break-word;
+}
+
+.footer-contact-list a:hover {
+    color: #4a90e2;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.social-facebook:hover {
+    background: #1877f2;
+}
+
+.social-linkedin:hover {
+    background: #0a66c2;
+}
+
+.social-github:hover {
+    background: #333;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+.nav-item-cv {
+    display: none;
+}
+
+.nav-cv-desktop {
+    display: block;
 }
 
 /* Animations */
@@ -705,9 +833,37 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-social {
+        grid-column: 1 / -1;
+    }
+
+    .footer-social .social-links {
+        justify-content: flex-start;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+
+    .nav-cv-desktop {
+        display: none;
+    }
+
+    .nav-item-cv {
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    .nav-item-cv .btn-cv {
+        width: auto;
+        justify-content: center;
     }
 
     .nav-menu {
@@ -720,16 +876,27 @@ body {
         text-align: center;
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
+        padding: 1.5rem 0 2rem;
+        z-index: 999;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        gap: 0;
+    }
+
+    .nav-menu .nav-item {
+        padding: 0.6rem 0;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
-    .nav-cv {
-        margin-left: 0;
-        margin-top: 1rem;
+    .nav-container {
+        padding: 0 15px;
+    }
+
+    .nav-logo a {
+        font-size: 1.25rem;
     }
 
     .hero-content {
@@ -738,8 +905,21 @@ body {
         gap: 2rem;
     }
 
-    .hero-text h1 {
-        font-size: 2.5rem;
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-image {
+        justify-content: center;
+    }
+
+    .badge-container {
+        justify-content: center;
+    }
+
+    .specialty-badge {
+        font-size: 0.85rem;
+        padding: 0.6rem 1rem;
     }
 
     .hero-buttons {
@@ -750,6 +930,7 @@ body {
     .contest-card {
         grid-template-columns: 1fr;
         text-align: center;
+        padding: 1.5rem;
     }
 
     .contest-stats {
@@ -770,15 +951,40 @@ body {
     .section-title {
         font-size: 2rem;
     }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-contact-list li {
+        justify-content: center;
+        text-align: left;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .footer-social .social-links {
+        justify-content: center;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .contest-item-content h3,
+    .project-content h3 {
+        font-size: 1.15rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .container {
+    .container,
+    .hero-container,
+    .nav-container {
         padding: 0 15px;
-    }
-
-    .hero-text h1 {
-        font-size: 2rem;
     }
 
     .hero-text h2 {
@@ -786,8 +992,8 @@ body {
     }
 
     .profile-image {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
     }
 
     .section {
@@ -795,6 +1001,35 @@ body {
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .contest-card,
+    .skill-category {
+        padding: 1.25rem;
+    }
+
+    .footer {
+        padding: 2rem 0 0;
+    }
+
+    .footer-brand h3 {
+        font-size: 1.1rem;
+    }
+
+    .footer-contact-list {
+        gap: 0.75rem;
+    }
+
+    .footer-contact-list li {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 } 
