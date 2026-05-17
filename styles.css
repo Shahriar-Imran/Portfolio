@@ -21,6 +21,11 @@ body {
 img {
     max-width: 100%;
 }
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
 
 .container {
     max-width: 1200px;
@@ -65,11 +70,103 @@ img {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: center;
 }
 
-.nav-cv {
-    margin-left: 2rem;
+.nav-item-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.nav-dropdown-toggle:hover,
+.nav-item-dropdown.active .nav-dropdown-toggle {
+    color: #4a90e2;
+}
+
+.nav-dropdown-icon {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-item-dropdown.active .nav-dropdown-icon,
+.nav-item-dropdown:hover .nav-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    min-width: 220px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 1001;
+}
+
+.nav-item-dropdown:hover .nav-dropdown-menu,
+.nav-item-dropdown.active .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-dropdown-menu li {
+    margin: 0;
+}
+
+.nav-dropdown-link {
+    display: block;
+    padding: 0.65rem 1.25rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-dropdown-link::after {
+    display: none;
+}
+
+.nav-dropdown-link:hover {
+    background: #f7fafc;
+    color: #4a90e2;
+}
+
+.nav-dropdown-resume {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a90e2;
+    border-top: 1px solid #edf2f7;
+    margin-top: 0.25rem;
+    padding-top: 0.85rem;
+}
+
+.nav-dropdown-resume:hover {
+    background: #ebf4fc;
 }
 
 .btn-cv {
@@ -300,6 +397,130 @@ img {
     height: 4px;
     background: linear-gradient(90deg, #4a90e2, #764ba2);
     border-radius: 2px;
+}
+
+/* Education Section */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.education-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+    transition: transform 0.3s ease;
+    min-width: 0;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+}
+
+.education-logo {
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #f7fafc;
+    border: 2px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0.75rem;
+}
+
+.education-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.education-logo-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4a90e2 0%, #764ba2 100%);
+    border-radius: 14px;
+    color: white;
+    font-size: 3rem;
+}
+
+.education-body {
+    min-width: 0;
+}
+
+.education-body h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+
+.education-degree {
+    font-size: 1.05rem;
+    color: #4a90e2;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.education-duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #718096;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+}
+
+.education-duration i {
+    color: #4a90e2;
+}
+
+.education-results {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #718096;
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+}
+.education-results i {
+    color: #4a90e2;
+}
+
+.education-stat {
+    text-align: center;
+    padding: 1rem 0.75rem;
+    background: #f7fafc;
+    border-radius: 10px;
+    border: 1px solid #edf2f7;
+}
+
+.education-stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #718096;
+    margin-bottom: 0.4rem;
+}
+
+.education-stat-value {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4a90e2;
+    word-break: break-word;
 }
 
 /* Competitive Programming hierarchy */
@@ -887,14 +1108,6 @@ img {
     color: #a0aec0;
 }
 
-.nav-item-cv {
-    display: none;
-}
-
-.nav-cv-desktop {
-    display: block;
-}
-
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -924,20 +1137,6 @@ img {
         display: flex;
     }
 
-    .nav-cv-desktop {
-        display: none;
-    }
-
-    .nav-item-cv {
-        display: block;
-        margin-top: 0.5rem;
-    }
-
-    .nav-item-cv .btn-cv {
-        width: auto;
-        justify-content: center;
-    }
-
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -957,6 +1156,66 @@ img {
 
     .nav-menu .nav-item {
         padding: 0.6rem 0;
+        width: 100%;
+    }
+
+    .nav-item-dropdown {
+        width: 100%;
+    }
+
+    .nav-dropdown-toggle {
+        justify-content: center;
+        width: 100%;
+        padding: 0.25rem 0;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        min-width: 100%;
+        box-shadow: none;
+        background: #f8fafc;
+        border-radius: 10px;
+        margin-top: 0.5rem;
+        padding: 0.35rem 0;
+        opacity: 1;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        transform: none;
+        transition: max-height 0.3s ease, visibility 0.3s ease, margin 0.3s ease;
+    }
+
+    .nav-item-dropdown.active .nav-dropdown-menu {
+        visibility: visible;
+        max-height: 320px;
+        margin-top: 0.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-item-dropdown:hover .nav-dropdown-menu {
+        transform: none;
+        visibility: hidden;
+        max-height: 0;
+        margin-top: 0;
+    }
+
+    .nav-item-dropdown:hover .nav-dropdown-icon {
+        transform: none;
+    }
+
+    .nav-item-dropdown.active:hover .nav-dropdown-menu {
+        visibility: visible;
+        max-height: 320px;
+        margin-top: 0.5rem;
+    }
+
+    .nav-item-dropdown.active .nav-dropdown-icon {
+        transform: rotate(180deg);
+    }
+
+    .nav-dropdown-link {
+        text-align: center;
+        padding: 0.6rem 1rem;
     }
 
     .nav-menu.active {
@@ -1001,6 +1260,35 @@ img {
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .education-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+
+    .education-logo {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+    }
+
+    .education-body h3 {
+        font-size: 1.2rem;
+    }
+
+    .education-results {
+        grid-template-columns: 1fr;
+    }
+
+    .education-highlights {
+        text-align: left;
+    }
+
+    .education-highlights ul {
+        padding-left: 1.25rem;
     }
 
     .contest-card {
@@ -1172,6 +1460,23 @@ img {
     .contest-card,
     .skill-category {
         padding: 1rem;
+    }
+
+    .education-card {
+        padding: 1rem;
+    }
+
+    .education-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .education-body h3 {
+        font-size: 1.05rem;
+    }
+
+    .education-stat-value {
+        font-size: 1rem;
     }
 
     .contest-card {

@@ -13,38 +13,44 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Profile</a>
+                <a href="#home">Shahriar</a>
             </div>
             <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
                 <li class="nav-item">
                     <a href="#competitive-programming" class="nav-link">Competitive Programming</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#extra-curricular" class="nav-link">Extra Curricular</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#awards" class="nav-link">Awards</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
                     <a href="#projects" class="nav-link">Projects</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item nav-item-cv">
-                    <a href="Imran_Resume.pdf" class="btn btn-cv" download="Imran_Resume.pdf">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
+                <li class="nav-item nav-item-dropdown">
+                    <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                        More
+                        <i class="fas fa-chevron-down nav-dropdown-icon" aria-hidden="true"></i>
+                    </button>
+                    <ul class="nav-dropdown-menu">
+                        <li>
+                            <a href="#extra-curricular" class="nav-link nav-dropdown-link">Extra Curricular</a>
+                        </li>
+                        <li>
+                            <a href="#awards" class="nav-link nav-dropdown-link">Awards</a>
+                        </li>
+                        <li>
+                            <a href="#skills" class="nav-link nav-dropdown-link">Skills</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="nav-link nav-dropdown-link">Contact</a>
+                        </li>
+                        <li class="nav-dropdown-cv">
+                            <a href="Imran_Resume.pdf" class="nav-link nav-dropdown-link nav-dropdown-resume" download="Imran_Resume.pdf">
+                                <i class="fas fa-download" aria-hidden="true"></i> Download Resume
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
-            <div class="nav-cv nav-cv-desktop">
-                <a href="Imran_Resume.pdf" class="btn btn-cv" download="Imran_Resume.pdf">
-                    <i class="fas fa-download"></i> Download Resume
-                </a>
-            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -76,6 +82,71 @@
                         <img src="formal123.jpg" alt="Shahriar Imran" onerror="this.style.display='block'; this.style.opacity='1'; console.error('Image failed to load:', this.src);" style="display: block; opacity: 1;">
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-list">
+                <!-- IUBAT Education -->
+                <article class="education-card">
+                    <div class="education-logo">
+                        <img src="iubat-logo.png" alt="IUBAT Logo">
+                    </div>
+                    <div class="education-body">
+                        <h3> <a href="https://iubat.edu/" target="_blank">International University of Business Agriculture and Technology (IUBAT)</a></h3>
+                        <p class="education-degree">Bachelor of Science in Computer Science and Engineering</p>
+                        <p class="education-duration">
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                            <span>May 2022 – May 2026</span>
+                        </p><br>
+                        <p class="education-results">
+                            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                            <span>Result: CGPA 3.89 (out of 4.00)</span>
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- HSC (Higher Secondary Certificate) Education -->
+                <article class="education-card">
+                    <div class="education-logo">
+                        <img src="BGC-logo.png" alt="BGC Logo">
+                    </div>
+                    <div class="education-body">
+                        <h3><a href="https://bgch.edu.bd/" target="_blank">Brindaban Government College, Habiganj</a></h3>
+                        <p class="education-degree">Higher Secondary Certificate</p>
+                        <p class="education-duration">
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                            <span>Passing Year: 2020</span>
+                        </p><br>
+                        <p class="education-results">
+                            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                            <span>Result: GPA 5.00 (out of 5.00)</span>
+                        </p>
+                    </div>
+                </article>
+            
+                <!-- SSC (Secondary School Certificate) Education -->
+                <article class="education-card">
+                    <div class="education-logo">
+                        <img src="school.jpg" alt="SHS Logo">
+                    </div>
+                    <div class="education-body">
+                        <h3>Shibpasha High School, Ajmirganj, Habiganj</h3>
+                        <p class="education-degree">Secondary School Certificate</p>
+                        <p class="education-duration">
+                            <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                            <span>Passing Year: 2018</span>
+                        </p><br>
+                        <p class="education-results">
+                            <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                            <span>Result: GPA 5.00 (out of 5.00)</span>
+                        </p>
+                    </div>
+                </article>
             </div>
         </div>
     </section>

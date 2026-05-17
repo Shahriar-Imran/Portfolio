@@ -1,17 +1,39 @@
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const navDropdown = document.querySelector('.nav-item-dropdown');
+const navDropdownToggle = document.querySelector('.nav-dropdown-toggle');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link, .nav-item-cv a').forEach(n => n.addEventListener('click', () => {
+const closeNavMenu = () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
-}));
+    navDropdown?.classList.remove('active');
+    navDropdownToggle?.setAttribute('aria-expanded', 'false');
+};
+
+// More dropdown toggle
+if (navDropdownToggle && navDropdown) {
+    navDropdownToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navDropdown.classList.toggle('active');
+        navDropdownToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!navDropdown.contains(e.target)) {
+            navDropdown.classList.remove('active');
+            navDropdownToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('.nav-menu .nav-link').forEach(n => n.addEventListener('click', closeNavMenu));
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -57,7 +79,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all cards for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = document.querySelectorAll('.contest-card, .project-card, .skill-category');
+    const cards = document.querySelectorAll('.contest-card, .project-card, .skill-category, .education-card');
     
     cards.forEach(card => {
         card.style.opacity = '0';
@@ -110,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Add hover effects for better interactivity
 document.addEventListener('DOMContentLoaded', () => {
-    const interactiveElements = document.querySelectorAll('.contest-card, .project-card, .skill-category');
+    const interactiveElements = document.querySelectorAll('.contest-card, .project-card, .skill-category, .education-card');
     
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
@@ -152,8 +174,7 @@ createScrollProgress();
 // Add keyboard navigation support
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        closeNavMenu();
     }
 });
 
