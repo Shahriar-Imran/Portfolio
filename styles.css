@@ -38,12 +38,16 @@ a {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: linear-gradient
+        (to right, 
+        rgba(102, 126, 234, 1), 
+        rgba(118, 75, 162, 1));
+
     z-index: 1000;
     padding: 1rem 0;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); */
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -70,7 +74,7 @@ a {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -270,7 +274,7 @@ a {
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
+    opacity: 1;
     animation: fadeInUp 1s ease 0.2s both;
 }
 
