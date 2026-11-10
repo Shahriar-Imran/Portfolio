@@ -38,16 +38,21 @@ a {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient
-        (to right, 
-        rgba(102, 126, 234, 1), 
-        rgba(118, 75, 162, 1));
 
     z-index: 1000;
     padding: 1rem 0;
     /* box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1); */
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.hero-background {
+    background: linear-gradient(
+        135deg,
+        #e0f2fe 0%,
+        #bfdbfe 100%
+    );
+
 }
 
 .nav-container {
@@ -118,9 +123,10 @@ a {
     top: calc(100% + 12px);
     right: 0;
     min-width: 220px;
-    background: white;
+    background: transparent;
+    backdrop-filter: blur(20px);
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12); */
     padding: 0.5rem 0;
     opacity: 0;
     visibility: hidden;
@@ -239,8 +245,8 @@ a {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    
+    color: #2d3748;
     padding-top: 80px;
 }
 
@@ -831,21 +837,29 @@ a {
 }
 
 .specialty-badge {
-    background: linear-gradient(135deg, #4a90e2 0%, #4653ab 100%);
-    color: white;
+    background: #dbeafe;
+    color: #1e40af;
+
     padding: 0.75rem 1.5rem;
     border-radius: 30px;
+
     font-weight: 600;
     font-size: 0.95rem;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    border: 1px solid #93c5fd;
+
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(57, 73, 171, 0.3);
+
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
 }
 
 .specialty-badge:hover {
+    background: #bfdbfe;
+    border-color: #60a5fa;
+
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(57, 73, 171, 0.5);
-    border-color: rgba(255, 255, 255, 0.4);
+
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.2);
 }
 /* Awards Section */
 .awards-grid {
