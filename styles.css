@@ -49,12 +49,10 @@ a {
 }
 
 .navbar-area.navbar-scroll {
+    /* Keep the scroll state, but leave backdrop filtering to the menu layer. */
     background: transparent;
     backdrop-filter: blur(20px);
-}
 
-.nav-dropdown-menu.dropdown-scroll {
-    backdrop-filter: blur(20px);
 }
 
 .nav-container {
@@ -118,6 +116,8 @@ a {
 .nav-item-dropdown.active .nav-dropdown-icon,
 .nav-item-dropdown:hover .nav-dropdown-icon {
     transform: rotate(180deg);
+    
+    
 }
 
 .nav-dropdown-menu {
@@ -126,10 +126,9 @@ a {
     top: calc(100% + 12px);
     right: 0;
     min-width: 220px;
-    background: transparent;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     /* box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12); */
     padding: 0.5rem 0;
     opacity: 0;
@@ -1163,7 +1162,7 @@ a {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.45);
         width: 100%;
         text-align: center;
         transition: 0.3s;
@@ -1198,8 +1197,11 @@ a {
         position: static;
         min-width: 100%;
         box-shadow: none;
-        background: rgba(0, 0, 0, 0.1);
+        /* background: rgba(255, 255, 255, 0.12);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px); */
         backdrop-filter: none;
+        background: none;
         border-radius: 10px;
         margin-top: 0.5rem;
         padding: 0.35rem 0;

@@ -2,11 +2,9 @@ window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar-area');
     const dropdown = document.querySelector('.nav-dropdown-menu');
 
-    dropdown.classList.add('dropdown-scroll');
-
+    
     if(window.scrollY > 80) {
         navbar.classList.add('navbar-scroll')
-        
     }
     else {
         navbar.classList.remove('navbar-scroll')
